@@ -1,0 +1,33 @@
+{% extends "boilerplate.html" %}
+{% block title %} welcome {% endblock %}
+{% block head %} {% endblock %}
+{% block body %}
+	<div class="container">
+		<h1>Finger print sensor {{name}}</h1>
+		<div class="row my-2">
+			<h4>Registred Students</h4>
+			<a class="btn btn-sm btn-primary" style="width:200px;" href="/student_registration">Register a student</a>
+			<table>
+				<thead>
+					<tr>
+						<th>Id</th>
+						<th>Name</th>
+						<th>Class</th>
+						<th>Scan Id</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for student in students %}
+					<tr>
+						<td>{{student.id}}</td>
+						<td>{{student.name}}</td>
+						<td>{{student.class}}</td>
+						<td>{{student.finger_print}}</td>
+
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+{% endblock %}
